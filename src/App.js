@@ -1,15 +1,43 @@
+/* React Import */
 import React from 'react';
-import HelloWorld from './Components/HelloWorld'
-import CounterExample from './Components/CounterExample'
+
+/* Third Party Import */
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+/* Component */
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+/* Views */
+import Home from './Views/Home.js'
+import About from './Views/About.js'
+
 
 function App() {
   return (
     <div className="App">
-        <Header />
-        <HelloWorld name = "Aron Owen"/>
-        <Footer />
+
+
+        <Router>
+            <Header />
+
+            <div className="p-3">
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                </Switch>
+            </div>
+
+            <Footer />
+        </Router>
     </div>
   );
 }
