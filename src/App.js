@@ -5,8 +5,7 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 /* Component */
@@ -15,6 +14,7 @@ import Footer from './Components/Footer'
 /* Views */
 import Home from './Views/Home.js'
 import About from './Views/About.js'
+import Product from './Views/Product.js'
 
 
 function App() {
@@ -32,6 +32,9 @@ function App() {
                     </Route>
                     <Route path="/about">
                         <About />
+                    </Route>
+                    <Route path="/product/:id">
+                        <Product />
                     </Route>
                 </Switch>
             </div>
